@@ -1,13 +1,15 @@
-
 package api
-import(
-	"log"
+
+import (
 	"net/http"
+
+	log "gopkg.in/logger.v1"
 
 	"github.com/emicklei/go-restful"
 	restfulspec "github.com/emicklei/go-restful-openapi"
 	"github.com/go-openapi/spec"
 )
+
 //Register register router and start api server
 func Register() {
 	u := UserResource{map[string]User{}}
@@ -16,8 +18,8 @@ func Register() {
 	restful.DefaultContainer.Add(f.WebService())
 
 	config := restfulspec.Config{
-		WebServices: restful.RegisteredWebServices(), // you control what services are visible
-		APIPath:     "/apidocs.json",
+		WebServices:                   restful.RegisteredWebServices(), // you control what services are visible
+		APIPath:                       "/apidocs.json",
 		PostBuildSwaggerObjectHandler: enrichSwaggerObject}
 	restful.DefaultContainer.Add(restfulspec.NewOpenAPIService(config))
 
