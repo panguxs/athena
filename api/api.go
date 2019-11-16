@@ -12,6 +12,8 @@ import(
 func Register() {
 	u := UserResource{map[string]User{}}
 	restful.DefaultContainer.Add(u.WebService())
+	f :=FileResource{}
+	restful.DefaultContainer.Add(f.WebService())
 
 	config := restfulspec.Config{
 		WebServices: restful.RegisteredWebServices(), // you control what services are visible

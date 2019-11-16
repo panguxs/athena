@@ -118,9 +118,6 @@ func (u *UserResource) removeUser(request *restful.Request, response *restful.Re
 	delete(u.users, id)
 }
 
-
-
-
 // User is just a sample type
 type User struct {
 	ID   string `json:"id" description:"identifier of the user"`

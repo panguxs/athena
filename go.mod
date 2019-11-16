@@ -8,4 +8,5 @@ require (
 	github.com/go-openapi/spec v0.19.4
 	github.com/json-iterator/go v1.1.8 // indirect
 	github.com/julienschmidt/httprouter v1.2.0
+	gopkg.in/logger.v1 v1.0.1
 )
